@@ -27,17 +27,17 @@ var solveNQueens = function(n) {
 
     var displayRes = () => {
         let display = []
-        let mode = ""
+        let mode = []
         for (let i = 0; i < n; i++) {
-            mode += "."
+            mode.push(".")
         }
         res.forEach((pos) => {
             let oneResult = []
                 //console.log(pos)
             for (let i = 0; i < n; i++) {
-                let str = mode
-                let p = parseInt(pos[i])
-                oneResult.push(str.substr(0, p) + "Q" + str.substr(p + 1, n))
+                let str = mode.concat()
+                str[parseInt(pos[i])] = "Q"
+                oneResult.push(str.join(""))
                     //console.log(parseInt(pos[i]))
             }
             display.push(oneResult)
